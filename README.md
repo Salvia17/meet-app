@@ -25,7 +25,7 @@ Key Features:<br>
 
 <br>
 User stories and Gherkin syntax
-<br>
+<br><br>
 FEATURE 1: FILTER EVENTS BY CITY<br>
 USER STORY FEATURE 1: As a user, I should be able to filter events by city, so that I can see what is happening where I am located.<br>
 Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.
