@@ -55,11 +55,11 @@ describe('<Event /> component', () => {
 
   test('render show event details', () => {
     EventWrapper.setState({ showHideDetails: true });
-    EventWrapper.find('.showHideButton').simulate('click');
+    EventWrapper.find('.details-btn').simulate('click');
   });
 
   test('render hide event details', () => {
     EventWrapper.setState({ showHideDetails: false });
-    EventWrapper.find('.showHideButton').simulate('click');
+    EventWrapper.find('.details-btn').simulate('click');
   })
 });

@@ -26,15 +26,15 @@ class Event extends Component {
           <div className='event-details'>
             <h2>About event:</h2>
             <a href={event.htmlLink}>See Details on Google Calendar</a>
-            <p>{event.description}</p>
+            <p className='description'>{event.description}</p>
           </div>
         )}
 
         <button
-          className='showHideButton'
+          className='details-btn'
           onClick={() => this.handleShowHideButton()}
         >
-          {!this.state.showHideDetails ? 'show details' : 'hide details'}
+          {!this.state.showHideDetails ? 'Show details' : 'Hide details'}
         </button>
       </div>
     )
