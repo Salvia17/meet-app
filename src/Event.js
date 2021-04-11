@@ -25,7 +25,11 @@ class Event extends Component {
         {this.state.showHideDetails && (
           <div className='event-details'>
             <h2>About event:</h2>
-            <a href={event.htmlLink}>See Details on Google Calendar</a>
+            <a href={event.htmlLink}
+              target='_blank'
+              rel='noreferrer'>
+              <button className="google-btn">See Details on Google Calendar</button>
+            </a>
             <p className='description'>{event.description}</p>
           </div>
         )}
