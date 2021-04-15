@@ -5,6 +5,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
+import { WarningAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -16,6 +17,16 @@ class App extends Component {
 
   componentDidMount() {
     this.mounted = true;
+    if (!navigator.onLine) {
+      this.setState({
+        warningText:
+          'You are currently offline, so data may not be up to date',
+      });
+    } else {
+      this.setState({
+        warningText: '',
+      });
+    }
     getEvents().then((events) => {
       const { eventCount } = this.state;
       if (this.mounted) {
@@ -64,6 +75,7 @@ class App extends Component {
     const { eventCount } = this.state;
     return (
       <div className="App">
+        <WarningAlert text={this.state.warningText} />
         <h1>Meet App</h1>
         <h4>Choose a city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
