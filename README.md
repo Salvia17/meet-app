@@ -2,6 +2,8 @@ This serverless, progressive web application (PWA) is built with React using a
 test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.
 <br><br>
+See the **hosted project** [here](https://salvia17.github.io/meet-app/).
+<br><br>
 Key Features:<br>
 
   <ul>
