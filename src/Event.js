@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 class Event extends Component {
   state = {
@@ -13,13 +14,18 @@ class Event extends Component {
     }
   };
 
+  renderTime = () => {
+    const time = this.props.event.start.dateTime
+    const formattedTime = moment(time, 'YYYY-MM-DD HH:mm').toDate()
+    return <span className='start-dateTime'>{`${formattedTime}`}</span>
+  }
 
   render() {
     const { event } = this.props;
     return (
       <div className='event'>
         <h1>{event.summary}</h1>
-        <p>{event.start.dateTime}</p>
+        <p>{this.renderTime()}</p>
         <p className='locations'>{event.location}</p>
 
         {this.state.showHideDetails && (
